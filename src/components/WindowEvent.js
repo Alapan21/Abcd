@@ -1,7 +1,8 @@
 document.addEventListener('keyup', logKey);
 document.addEventListener('keypress', logKeyPress);
+
 let f = 0;
-// 
+
 function logKey(e) {
   let ele = document.getElementById(`${e.code}`);
   if (e.code === 'CapsLock' && f === 0) {

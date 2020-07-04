@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class Key extends Component {
   render() {
-    const { letter, id } = this.props;
+    const { letter, id, sp } = this.props;
     return (
-      <div className="key" id={id} >
+      <div className={sp} id={id} >
         {letter}
       </div >
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import Key from './Key';
-import WindowEvent from './WindowEvent';
+
 
 function Keyboard() {
   let newAlphaNum = [
@@ -18,10 +18,10 @@ function Keyboard() {
       { key: '0', id: 'Digit0' },
       { key: '-', id: 'Minus' },
       { key: '=', id: 'Equal' },
-      { key: 'BackSpace', id: 'Backspace' }
+      { key: 'BackSpace', id: 'Backspace', sp: 'key special' }
     ],
     [
-      { key: 'Tab', id: 'Tab' },
+      { key: 'Tab', id: 'Tab', sp: 'key special' },
       { key: 'Q', id: 'KeyQ' },
       { key: 'W', id: 'KeyW' },
       { key: 'E', id: 'KeyE' },
@@ -37,7 +37,7 @@ function Keyboard() {
       { key: '\\', id: 'Backslash' }
     ],
     [
-      { key: 'Capslock', id: 'CapsLock' },
+      { key: 'Capslock', id: 'CapsLock', sp: 'key special' },
       { key: 'A', id: 'KeyA' },
       { key: 'S', id: 'KeyS' },
       { key: 'D', id: 'KeyD' },
@@ -49,10 +49,10 @@ function Keyboard() {
       { key: 'L', id: 'KeyL' },
       { key: ';', id: 'Semicolon' },
       { key: '\'', id: 'Quote' },
-      { key: 'Enter', id: 'Enter' }
+      { key: 'Enter', id: 'Enter', sp: 'key special' }
     ],
     [
-      { key: 'Shift', id: 'ShiftLeft' },
+      { key: 'Shift', id: 'ShiftLeft', sp: 'key special' },
       { key: 'Z', id: 'KeyZ' },
       { key: 'X', id: 'KeyX' },
       { key: 'C', id: 'KeyC' },
@@ -63,41 +63,41 @@ function Keyboard() {
       { key: ',', id: 'Comma' },
       { key: '.', id: 'Period' },
       { key: '/', id: 'Slash' },
-      { key: 'Shift', id: 'ShiftRight' }
+      { key: 'Shift', id: 'ShiftRight', sp: 'key special' }
     ],
     [
-      { key: 'Ctrl', id: 'ControlLeft' },
-      { key: 'Alt', id: 'AltLeft' },
-      { key: 'Spacebar', id: 'Space' },
-      { key: 'Alt', id: 'AltRight' },
-      { key: 'Ctrl', id: 'ControlRight' }
+      { key: 'Ctrl', id: 'ControlLeft', sp: 'key special' },
+      { key: 'Alt', id: 'AltLeft', sp: 'key special' },
+      { key: 'Spacebar', id: 'Space', sp: 'key special space' },
+      { key: 'Alt', id: 'AltRight', sp: 'key special' },
+      { key: 'Ctrl', id: 'ControlRight', sp: 'key special' }
     ]
   ];
   return (
     <div className="keyboard">
-      <div id='row'>
+      <div className='row'>
         {
-          newAlphaNum[0].map((item, index) => <Key letter={item.key} id={item.id} key={index} />)
+          newAlphaNum[0].map((item, index) => <Key letter={item.key} id={item.id} key={index} sp={item.sp || "key"} />)
         }
       </div>
-      <div id='row'>
+      <div className='row'>
         {
-          newAlphaNum[1].map((item, index) => <Key letter={item.key} id={item.id} key={index} />)
+          newAlphaNum[1].map((item, index) => <Key letter={item.key} id={item.id} key={index} sp={item.sp || "key"} />)
         }
       </div>
-      <div id='row'>
+      <div className='row'>
         {
-          newAlphaNum[2].map((item, index) => <Key letter={item.key} id={item.id} key={index} />)
+          newAlphaNum[2].map((item, index) => <Key letter={item.key} id={item.id} key={index} sp={item.sp || "key"} />)
         }
       </div>
-      <div id='row'>
+      <div className='row'>
         {
-          newAlphaNum[3].map((item, index) => <Key letter={item.key} id={item.id} key={index} />)
+          newAlphaNum[3].map((item, index) => <Key letter={item.key} id={item.id} key={index} sp={item.sp || "key"} />)
         }
       </div>
-      <div id='row'>
+      <div className='row'>
         {
-          newAlphaNum[4].map((item, index) => <Key letter={item.key} id={item.id} key={index} />)
+          newAlphaNum[4].map((item, index) => <Key letter={item.key} id={item.id} key={index} sp={item.sp || "key"} />)
         }
       </div>
     </div>

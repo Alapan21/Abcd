@@ -7,6 +7,7 @@ import WindowEvent from '../src/components/WindowEvent';
 function App() {
   return (
     <div className="App">
+      <input autoFocus />
       <div className="container">
         <Keyboard />
       </div>

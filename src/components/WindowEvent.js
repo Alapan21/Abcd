@@ -3,7 +3,6 @@ document.addEventListener('keypress', logKeyPress);
 let f = 0;
 // 
 function logKey(e) {
-  e.preventDefault();
   let ele = document.getElementById(`${e.code}`);
   if (e.code === 'CapsLock' && f === 0) {
     ele.style.backgroundColor = '#dfe6e9';
@@ -22,7 +21,6 @@ function logKey(e) {
   }
 }
 function logKeyPress(e) {
-  e.preventDefault();
   let ele = document.getElementById(`${e.code}`);
   if (e.code === 'CapsLock' && f === 0) {
     ele.style.backgroundColor = '#dfe6e9';

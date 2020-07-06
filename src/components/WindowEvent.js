@@ -18,7 +18,7 @@ function logKey(e) {
   else {
     ele.style.backgroundColor = '#dfe6e9'
     ele.style.color = '#2d3436';
-    setTimeout(() => { ele.style.backgroundColor = '#2d3436'; ele.style.color = '#dfe6e9' }, 200);
+    setTimeout(() => { ele.style.backgroundColor = '#2d3436'; ele.style.color = '#dfe6e9' }, 0);
   }
 }
 function logKeyPress(e) {

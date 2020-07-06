@@ -1,16 +1,64 @@
 import React, { Component } from 'react';
-import './App.css';
-
 import Keyboard from './components/Keyboard';
 import '../src/components/WindowEvent';
+import './App.css';
 
 
 class App extends Component {
 
   componentDidMount() {
 
+    //quote api
     const get_quote_url = "http://api.quotable.io/random";
+    //quote area
+    const quote_display = document.getElementById('quote');
+    //input area
+    const input_area = document.getElementById('inputarea');
+    // character count
+    const quote_char_count = document.getElementById('charCount');
+    // word count
+    const quote_word_count = document.getElementById('wordCount');
+    // correct answer
+    const correctAnswer = document.getElementById('correct');
+    //incorrect answer
+    const incorrectAnswer = document.getElementById('incorrect');
+    //timer
+    const timer = document.getElementById('time');
+    //
+    let correctAns = 0;
+    let incorrectAns = 0;
+    // adding event listener to the input text area
+    input_area.addEventListener('input', () => {
+      let correct = true;
+      // selecting all span elements inside quote
+      const arrayQuote = quote_display.querySelectorAll('span');
+      // selecting input from user
+      const arrayInput = input_area.value.split('');
+      // answer check
+      // checking
+      arrayQuote.forEach((charSpan, index) => {
+        const charInput = arrayInput[index];
+        if (charInput == null) {
+          charSpan.classList.remove('incorrect');
+          charSpan.classList.remove('correct');
+          correct = false;
+        }
+        else if (charInput === charSpan.innerText) {
+          charSpan.classList.add('correct');
+          charSpan.classList.remove('incorrect');
+          correctAns += 1;
+        }
+        else {
+          charSpan.classList.add('incorrect');
+          charSpan.classList.remove('correct');
+          correct = false;
+          incorrectAns += 1;
+        }
+      });
+      if (correct) renderQuote();
+    });
 
+    // getting quote from url
     function getQuote() {
       return fetch(get_quote_url)
         .then(res => res.json())
@@ -18,34 +66,69 @@ class App extends Component {
         .catch(err => console.log(err))
     }
 
-    async function render() {
-      const quote_tag = document.getElementById('quote');
+    async function renderQuote() {
+      // get quote
       const quote = await getQuote();
-      quote_tag.innerHTML = '';
+      // reset quote area and input block
+      quote_display.innerHTML = '';
+      input_area.value = null;
+
+      // get quote character count
+      const charCount = quote.length;
+      // get quote word count
+      const wordCount = quote.split(' ').length;
+
+      // split items
       quote.split('').forEach(char => {
         const charSpan = document.createElement('span');
         charSpan.innerText = char;
-        quote_tag.appendChild(charSpan);
+        quote_display.appendChild(charSpan);
       });
 
+      // setting charcount
+      quote_char_count.innerHTML = charCount;
+      // setting word count
+      quote_word_count.innerHTML = wordCount;
+      // setting correct char count
+      correctAnswer.innerHTML = correctAns;
+      // setting incorrect char count;
+      incorrectAnswer.innerHTML = incorrectAns;
     }
 
-    render();
+    renderQuote();
   }
 
   render() {
     return (
       <div className="App">
+
+        <div class="data">
+          <h2>Time <span className="time">0</span></h2>
+          <h2>Correct <span className="correct">0</span></h2>
+          <h2>Incorrect <span className="incorrect">0</span></h2>
+        </div>
+
+        <div className="scorecard">
+          <h2>Score <span className="score">0</span></h2>
+          <h2>Speed <span className="score">0</span>/pm</h2>
+        </div>
+
         <div className='quote'>
           <h2 id="quote">loading text...</h2>
+          <div className="charactercount">
+            <p>Letter Count <span id="charCount">0</span></p>
+          </div>
+          <div className="wordcount">
+            <p>Word Count <span id="wordCount">0</span></p>
+          </div>
         </div>
         <div className="input">
-          <input type="text" autoFocus />
+          <textarea id="inputarea" type="text" autoFocus spellCheck='false' />
         </div>
         <div className="container">
           <Keyboard />
         </div>
-      </div>
+      </div >
     )
   }
 }

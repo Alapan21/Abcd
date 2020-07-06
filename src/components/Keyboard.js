@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Key from './Key';
 
 
+// create service to feed the key array
+
 class Keyboard extends Component {
   constructor(props) {
     super(props)

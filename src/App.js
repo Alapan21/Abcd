@@ -12,14 +12,19 @@ class App extends Component {
   componentDidMount() {
     //quote api
     const get_quote_url = "http://api.quotable.io/random";
+
     //quote area
     const quote_display = document.getElementById('quote');
+
     //input area
     const input_area = document.getElementById('inputarea');
+
     // character count
     const quote_char_count = document.getElementById('charCount');
+
     // word count
     const quote_word_count = document.getElementById('wordCount');
+
     // adding event listener to the input text area
     input_area.addEventListener('input', () => {
       let correct = true;
@@ -91,7 +96,6 @@ class App extends Component {
       <div className="App">
         <Data />
         <Score />
-
         <div className='quote'>
           <h2 id="quote">loading text...</h2>
           <div className="charactercount">
@@ -102,7 +106,11 @@ class App extends Component {
           </div>
         </div>
         <div className="input">
-          <textarea id="inputarea" type="text" autoFocus spellCheck='false' />
+          <textarea
+            id="inputarea"
+            type="text"
+            autoFocus
+            spellCheck='false' />
         </div>
         <div className="container">
           <Keyboard />

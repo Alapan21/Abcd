@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
-import Key from './Key';
 
+import KeyboardRow from './KeyboardRow';
 
 // create service to feed the key array
 
 class Keyboard extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      capsOn: true
-    }
-  }
   render() {
     let newAlphaNum = [
       [
@@ -86,60 +79,14 @@ class Keyboard extends Component {
 
     return (
       <div className="keyboard">
-        <div className='row'>
-          {
-            newAlphaNum[0].map((item, index) =>
-              <Key
-                letter={this.state.capsOn ? item.key : item.key.toLowerCase()}
-                id={item.id}
-                key={index}
-                sp={item.sp || "key"} />)
-          }
-        </div>
-        <div className='row'>
-          {
-            newAlphaNum[1].map((item, index) =>
-              <Key
-                letter={this.state.capsOn ? item.key : item.key.toLowerCase()}
-                id={item.id}
-                key={index}
-                sp={item.sp || "key"} />)
-          }
-        </div>
-        <div className='row'>
-          {
-            newAlphaNum[2].map((item, index) =>
-              <Key
-                letter={this.state.capsOn ? item.key : item.key.toLowerCase()}
-                id={item.id}
-                key={index}
-                sp={item.sp || "key"} />)
-          }
-        </div>
-        <div className='row'>
-          {
-            newAlphaNum[3].map((item, index) =>
-              <Key
-                letter={this.state.capsOn ? item.key : item.key.toLowerCase()}
-                id={item.id}
-                key={index}
-                sp={item.sp || "key"} />)
-          }
-        </div>
-        <div className='row'>
-          {
-            newAlphaNum[4].map((item, index) =>
-              <Key
-                letter={item.key}
-                id={item.id}
-                key={index}
-                sp={item.sp || "key"} />)
-          }
-        </div>
+        {
+          newAlphaNum.map((item, index) =>
+            <KeyboardRow key={index} letterrow={item} />
+          )
+        }
       </div>
     )
   }
 }
 
 export default Keyboard
-

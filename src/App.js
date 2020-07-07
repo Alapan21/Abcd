@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+
 import Keyboard from './components/Keyboard';
+import Data from './components/data';
+import Score from './components/score';
+
 import '../src/components/WindowEvent';
 import './App.css';
 
 
 class App extends Component {
-
   componentDidMount() {
-
     //quote api
     const get_quote_url = "http://api.quotable.io/random";
     //quote area
@@ -18,15 +20,6 @@ class App extends Component {
     const quote_char_count = document.getElementById('charCount');
     // word count
     const quote_word_count = document.getElementById('wordCount');
-    // correct answer
-    const correctAnswer = document.getElementById('correct');
-    //incorrect answer
-    const incorrectAnswer = document.getElementById('incorrect');
-    //timer
-    const timer = document.getElementById('time');
-    //
-    let correctAns = 0;
-    let incorrectAns = 0;
     // adding event listener to the input text area
     input_area.addEventListener('input', () => {
       let correct = true;
@@ -46,13 +39,11 @@ class App extends Component {
         else if (charInput === charSpan.innerText) {
           charSpan.classList.add('correct');
           charSpan.classList.remove('incorrect');
-          correctAns += 1;
         }
         else {
           charSpan.classList.add('incorrect');
           charSpan.classList.remove('correct');
           correct = false;
-          incorrectAns += 1;
         }
       });
       if (correct) renderQuote();
@@ -84,15 +75,12 @@ class App extends Component {
         charSpan.innerText = char;
         quote_display.appendChild(charSpan);
       });
-
+      //
       // setting charcount
       quote_char_count.innerHTML = charCount;
       // setting word count
       quote_word_count.innerHTML = wordCount;
-      // setting correct char count
-      correctAnswer.innerHTML = correctAns;
-      // setting incorrect char count;
-      incorrectAnswer.innerHTML = incorrectAns;
+
     }
 
     renderQuote();
@@ -101,17 +89,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        <div class="data">
-          <h2>Time <span className="time">0</span></h2>
-          <h2>Correct <span className="correct">0</span></h2>
-          <h2>Incorrect <span className="incorrect">0</span></h2>
-        </div>
-
-        <div className="scorecard">
-          <h2>Score <span className="score">0</span></h2>
-          <h2>Speed <span className="score">0</span>/pm</h2>
-        </div>
+        <Data />
+        <Score />
 
         <div className='quote'>
           <h2 id="quote">loading text...</h2>

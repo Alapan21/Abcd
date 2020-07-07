@@ -32,7 +32,6 @@ class App extends Component {
       const arrayQuote = quote_display.querySelectorAll('span');
       // selecting input from user
       const arrayInput = input_area.value.split('');
-      // answer check
       // checking
       arrayQuote.forEach((charSpan, index) => {
         const charInput = arrayInput[index];
@@ -80,7 +79,6 @@ class App extends Component {
         charSpan.innerText = char;
         quote_display.appendChild(charSpan);
       });
-      //
       // setting charcount
       quote_char_count.innerHTML = charCount;
       // setting word count

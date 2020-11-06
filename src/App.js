@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-import Keyboard from './components/Keyboard';
-import Data from './components/data';
-import Score from './components/score';
+import Keyboard from './components/keyboard';
+import Data from './components/scoreCard/data';
+import Score from './components/scoreCard/score';
 
 import '../src/components/WindowEvent';
-import './App.css';
+import './App.scss';
+import Quote from './components/quote';
 
 
 class App extends Component {
@@ -94,15 +95,7 @@ class App extends Component {
       <div className="App">
         <Data />
         <Score />
-        <div className='quote'>
-          <h2 id="quote">loading text...</h2>
-          <div className="charactercount">
-            <p>Letter Count <span id="charCount">0</span></p>
-          </div>
-          <div className="wordcount">
-            <p>Word Count <span id="wordCount">0</span></p>
-          </div>
-        </div>
+        <Quote></Quote>
         <div className="input">
           <textarea
             id="inputarea"
@@ -110,8 +103,8 @@ class App extends Component {
             autoFocus
             spellCheck='false' />
         </div>
-        <div className="container">
-          <Keyboard />
+        <div className="keyboard_container">
+          <Keyboard/>
         </div>
       </div >
     )

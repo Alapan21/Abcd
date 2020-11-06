@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 // functional
 class Key extends Component {
   render() {
@@ -6,9 +6,9 @@ class Key extends Component {
     return (
       <div className={sp} id={id}>
         {letter}
-      </div >
-    )
+      </div>
+    );
   }
 }
 
-export default Key
+export default Key;

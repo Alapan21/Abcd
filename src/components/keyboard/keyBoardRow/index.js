@@ -12,11 +12,7 @@ const KeyboardRow = ({ letterRow }) => {
   );
 };
 KeyboardRow.propTypes = {
-  letterRow: PropTypes.arrayOf({
-    letter: PropTypes.string,
-    id: PropTypes.string,
-    sp: PropTypes.string,
-  }),
+  letterRow: PropTypes.arrayOf(PropTypes.shape())
 };
 
 export default KeyboardRow;

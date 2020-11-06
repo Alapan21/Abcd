@@ -13,7 +13,7 @@ class Keyboard extends Component {
     return (
       <div className="keyboard">
         {newAlphaNum.map((item, index) => (
-          <KeyboardRow key={index} letterrow={item} />
+          <KeyboardRow key={index} letterRow={item} />
         ))}
       </div>
     );

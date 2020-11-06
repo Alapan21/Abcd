@@ -107,7 +107,7 @@ class App extends Component {
           <textarea id="inputarea" type="text" autoFocus spellCheck="false" />
         </div>
         <div className="keyboard_container">
-          <ComponentAWithKeyState />
+          <Keyboard />
         </div>
       </div>
     );

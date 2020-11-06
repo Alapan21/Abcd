@@ -10,18 +10,11 @@ class Keyboard extends Component {
     let newAlphaNum = JSON.parse(JSON.stringify(keyConfig));
 
     return (
-      <KeyboardEventHandler
-        handleKeys={["all"]}
-        onKeyEvent={(key, e) =>
-          console.log(`do something upon keydown event of ${key}`)
-        }
-      >
-        <div className="keyboard">
-          {newAlphaNum.map((item, index) => (
-            <KeyboardRow key={index} letterRow={item} />
-          ))}
-        </div>
-      </KeyboardEventHandler>
+      <div className="keyboard">
+        {newAlphaNum.map((item, index) => (
+          <KeyboardRow key={index} letterRow={item} />
+        ))}
+      </div>
     );
   }
 }

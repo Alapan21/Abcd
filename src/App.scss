@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
-@import url("./keyBoard.css");
+@import './resources/base.scss';
+
 
 * {
   margin: 0;
@@ -65,7 +65,7 @@ textarea:focus {
   position: absolute;
   bottom: 265px;
 }
-.container {
+.keyboard_container {
   position: absolute;
   bottom: 15px;
 }

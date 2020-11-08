@@ -9,6 +9,7 @@ import "./App.scss";
 import Quote from "./components/quote";
 
 class App extends Component {
+
   componentDidMount() {
     //quote api
     const get_quote_url = "http://api.quotable.io/random";
@@ -36,9 +37,9 @@ class App extends Component {
       arrayQuote.forEach((charSpan, index) => {
         //score counter
         const correctCounter = document.querySelector("span.correct");
-        
+
         const inCorrectCounter = document.querySelector("span.incorrect");
-        
+
         const charInput = arrayInput[index];
         if (charInput == null) {
           charSpan.classList.remove("incorrect");
@@ -47,16 +48,15 @@ class App extends Component {
         } else if (charInput === charSpan.innerText) {
           charSpan.classList.add("correct");
           charSpan.classList.remove("incorrect");
-         
         } else {
           charSpan.classList.add("incorrect");
           charSpan.classList.remove("correct");
           correct = false;
-         
         }
         inCorrectCounter.innerHTML = quote_display.querySelectorAll("span.incorrect").length;
         correctCounter.innerHTML = quote_display.querySelectorAll("span.correct").length;
       });
+
       if (correct) {
         renderQuote();
       }
@@ -102,7 +102,7 @@ class App extends Component {
       <div className="App">
         <Data />
         <Score />
-        <Quote></Quote>
+        <Quote />
         <div className="input">
           <textarea id="inputarea" type="text" autoFocus spellCheck="false" />
         </div>

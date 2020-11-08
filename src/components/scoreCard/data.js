@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './scoreCard.scss';
+
 function data() {
   return (
     <div className="data">

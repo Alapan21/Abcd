@@ -1,6 +1,5 @@
 @import './resources/base.scss';
 
-
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +22,7 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .App > div {
   width: 60%;
 }
@@ -31,6 +31,7 @@ h2 {
   font-size: 16px;
   font-weight: 500;
 }
+
 textarea {
   color: #000;
   outline: none;
@@ -45,6 +46,7 @@ textarea {
   font-weight: 400;
   resize: none;
 }
+
 textarea:focus {
   border: 4px solid #74b9ff;
   transition: all 0.2s linear;
@@ -54,40 +56,24 @@ textarea:focus {
   color: #2d3436;
 }
 
-.input,
-.quote {
+.input {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
 .input {
   position: absolute;
   bottom: 265px;
 }
+
 .keyboard_container {
   position: absolute;
   bottom: 15px;
 }
-.quote {
-  height: 200px;
-  padding: 15px;
-}
 
-.charactercount {
-  position: absolute;
-  right: 5px;
-  bottom: 0px;
-  height: 20px;
-  font-size: 12px;
-}
-.wordcount {
-  position: absolute;
-  left: 5px;
-  bottom: 0px;
-  height: 20px;
-  font-size: 12px;
-}
+
 
 .correct {
   color: #74b9ff;
@@ -96,17 +82,4 @@ textarea:focus {
 .incorrect {
   color: #ff6b81;
   text-decoration: line-through;
-}
-.score {
-  color: #00cec9;
-}
-.data {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-.scorecard {
-  position: absolute;
-  top: 100px;
-  left: 20px;
 }

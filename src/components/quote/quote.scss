@@ -1,0 +1,36 @@
+.quote {
+  height: 200px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid white;
+
+  .charactercount {
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+    height: 20px;
+    font-size: 12px;
+  }
+  
+  .wordcount {
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .refresh-btn {
+    background-color: transparent;
+    border: none;
+    svg {
+      fill: #fff;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+}

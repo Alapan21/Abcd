@@ -1,0 +1,24 @@
+.score {
+  color: #00cec9;
+  .correct {
+  color: #74b9ff;
+  text-decoration: underline;
+}
+.incorrect {
+  color: #ff6b81;
+  text-decoration: line-through;
+}
+
+}
+
+.data {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.scorecard {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}

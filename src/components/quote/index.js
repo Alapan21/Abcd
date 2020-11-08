@@ -2,7 +2,7 @@ import React from "react";
 //scss import
 import './quote.scss';
 // SVG imports
-import RefreshIcon from '../../resources/assets/index';
+import { RefreshIcon } from '../../resources/assets/index';
 
 const Quote = () => {
   return (

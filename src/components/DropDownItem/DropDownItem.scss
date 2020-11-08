@@ -1,0 +1,18 @@
+@import "../../resources/variables.scss";
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  transition: backgroud $animation-speed;
+  padding: 0.5rem;
+}
+
+.menu-item:hover {
+  background-color: $menu-color;
+}
+
+.icon-right {
+  margin-left: auto;
+}

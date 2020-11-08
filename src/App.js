@@ -4,6 +4,12 @@ import Keyboard from "./components/keyboard";
 import Data from "./components/scoreCard/data";
 import Score from "./components/scoreCard/score";
 
+import Navbar from './components/NavBar/Navbar';
+import Navitem from './components/NavItem/Navitem';
+import Dropdown from './components/DropDown/Dropdown';
+
+import { PlusIcon, BellIcon, MessengerIcon, CaretIcon } from './resources/assets/index';
+
 import "../src/components/WindowEvent";
 import "./App.scss";
 import Quote from "./components/quote";
@@ -100,6 +106,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar>
+          <Navitem icon={<PlusIcon />} />
+          <Navitem icon={<BellIcon />} />
+          <Navitem icon={<MessengerIcon />} />
+          <Navitem icon={<CaretIcon />}>
+            <Dropdown />
+          </Navitem>
+        </Navbar>
         <Data />
         <Score />
         <Quote />

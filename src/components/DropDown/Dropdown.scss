@@ -1,0 +1,47 @@
+@import "../../resources/variables.scss";
+
+.dropdown {
+  position: absolute;
+  top: $nav-size;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: $bg;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height $animation-speed ease;
+}
+
+//! Primary Menu
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all $animation-speed ease;
+}
+
+.menu-primary-exit {
+  position: absolute;
+}
+
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all $animation-speed ease;
+}
+
+//! Secondary Menu
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all $animation-speed ease;
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all $animation-speed ease;
+}

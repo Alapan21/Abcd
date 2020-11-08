@@ -1,0 +1,31 @@
+@import "../../resources/variables.scss";
+
+.nav-item {
+  height: $icon-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  height: $btn-size;
+  width: $btn-size;
+  background-color: $bg-accent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  transition: filter 300ms;
+}
+
+.icon-button:hover {
+  filter: brightness(1.2);
+}
+
+.icon-button svg {
+  fill: $primary-text-color;
+  width: 20px;
+  height: 20px;
+}
